@@ -36,7 +36,11 @@
                 <!-- START: Paste your Teachable Machine code here -->
                
                 <div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
+                    <!-- Styled Start button (uses Tailwind CSS already included in the page) -->
+                    <button id="start-button" type="button" onclick="init()"
+                        class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 focus:bg-blue-700 text-white font-semibold rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-300">
+                        Start
+                    </button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
@@ -46,6 +50,8 @@
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
     // the link to your model provided by Teachable Machine export panel
+    // Note: workspace contains the exported model folder named "tm-my-image-model (1)".
+    // Update the path to match the actual folder name so the model files are found.
     const URL = "./tm-my-image-model (1)/";
 
     let model, webcam, labelContainer, maxPredictions;
